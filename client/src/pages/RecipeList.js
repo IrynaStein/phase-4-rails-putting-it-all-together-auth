@@ -10,7 +10,10 @@ function RecipeList() {
   useEffect(() => {
     fetch("/recipes")
       .then((r) => r.json())
-      .then(setRecipes);
+      .then(data => {
+        setRecipes(data)
+        console.log(data)
+      });
   }, []);
 
   return (
